@@ -9,5 +9,6 @@ namespace idea_generic_task_server.Core {
         public string created { get; set; }
         public bool closed { get; set; }
         public string type { get; set; }
+        public string issueUrl { get; set; }
     }
 }
