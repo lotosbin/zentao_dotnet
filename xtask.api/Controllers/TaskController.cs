@@ -41,13 +41,13 @@ namespace idea_generic_task_server.Controllers {
             var _zentaoClient = new ZentaoClient(_memoryCache, _host, username, password);
             var items = (await _zentaoClient.GetMyTaskAssignedTo()).Select(item => {
                     var task = _mapper.Map<Task>(item);
-                    task.issueUrl = $"{_host}/task-view-${task.id}.html";
+                    task.issueUrl = $"{_host}/task-view-{task.id}.html";
                     return task;
                 })
                 .Where(item => !item.closed);
             var bugs = (await _zentaoClient.GetMyBug()).Select(item => {
                     var bug = _mapper.Map<Task>(item);
-                    bug.issueUrl = $"{_host}/bug-view-${bug.id}.html";
+                    bug.issueUrl = $"{_host}/bug-view-{bug.id}.html";
                     return bug;
                 })
                 .Where(item => !item.closed);
