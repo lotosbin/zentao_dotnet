@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zentao.client", "zentao.cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zentao.client.tests", "zentao.client.tests\zentao.client.tests.csproj", "{FCE7B9ED-08FB-4546-A301-246DABF1C756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xtask.api", "xtask.api\xtask.api.csproj", "{1C2DEE7A-C07C-4531-991B-22BF13AFED51}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{FCE7B9ED-08FB-4546-A301-246DABF1C756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCE7B9ED-08FB-4546-A301-246DABF1C756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCE7B9ED-08FB-4546-A301-246DABF1C756}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C2DEE7A-C07C-4531-991B-22BF13AFED51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C2DEE7A-C07C-4531-991B-22BF13AFED51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C2DEE7A-C07C-4531-991B-22BF13AFED51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C2DEE7A-C07C-4531-991B-22BF13AFED51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
