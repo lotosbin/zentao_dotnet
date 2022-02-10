@@ -1,12 +1,7 @@
-using System.Collections.Generic;
+using zentao.client.core;
 
 namespace zentao.client {
     internal class TaskData {
         public List<TaskItem> tasks { get; set; }
-    }
-
-    internal class BugData {
-        public List<BugItem> bugs { get; set; }
- 
     }
 }

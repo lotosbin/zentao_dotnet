@@ -1,4 +1,4 @@
-namespace zentao.client {
+namespace zentao.client.core {
     public class BugItem {
         public string id { get; set; }
         public string title { get; set; }

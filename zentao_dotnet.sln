@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zentao.client", "zentao.cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zentao.client.tests", "zentao.client.tests\zentao.client.tests.csproj", "{FCE7B9ED-08FB-4546-A301-246DABF1C756}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zentao.api", "zentao.api\zentao.api.csproj", "{B0D24CCC-4BD1-4B0D-8E00-61E38B6AFA1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FCE7B9ED-08FB-4546-A301-246DABF1C756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCE7B9ED-08FB-4546-A301-246DABF1C756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCE7B9ED-08FB-4546-A301-246DABF1C756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0D24CCC-4BD1-4B0D-8E00-61E38B6AFA1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D24CCC-4BD1-4B0D-8E00-61E38B6AFA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D24CCC-4BD1-4B0D-8E00-61E38B6AFA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D24CCC-4BD1-4B0D-8E00-61E38B6AFA1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

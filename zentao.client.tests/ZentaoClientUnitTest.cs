@@ -10,14 +10,14 @@ namespace zentao.client.tests {
 
         public ZentaoClientUnitTest(IConfiguration configuration, IMemoryCache memoryCache) {
             var host = configuration.GetValue<string>("ASPNETCORE_ZENTAO_HOST");
-            var sessionName = configuration.GetValue<string>("ASPNETCORE_ZENTAO_SESSION_NAME");
-            var sessionId = configuration.GetValue<string>("ASPNETCORE_ZENTAO_SESSION_ID");
-            _zentaoClient = new ZentaoClient(memoryCache, host, sessionName, sessionId);
+            var account = configuration.GetValue<string>("ASPNETCORE_ZENTAO_ACCOUNT");
+            var password = configuration.GetValue<string>("ASPNETCORE_ZENTAO_PASSWORD");
+            _zentaoClient = new ZentaoClient(memoryCache, host, account, password);
         }
 
         [Fact]
-        public async void GetMyTaskAssignedToTest() {
-            var task = await _zentaoClient.GetMyTaskAssignedTo();
+        public async void GetMyTasks() {
+            var task = await _zentaoClient.GetMyTaskAsync();
             Assert.True(task.Count > 0);
         }
     }

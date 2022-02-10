@@ -1,4 +1,5 @@
-namespace zentao.client {
+namespace zentao.client.core
+{
     public class TaskItem {
         public string id { get; set; }
         public string name { get; set; }

@@ -1,9 +1,9 @@
 version: '3.1'
 services:
   api:
-    image: lotosbin/xtask.api
+    image: lotosbin/zentao.api
     build:
       context: .
-      dockerfile: xtask.api/Dockerfile
+      dockerfile: zentao.api/Dockerfile
     env_file:
       - ./.env

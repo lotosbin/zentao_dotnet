@@ -1,20 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
+using static zentao.client.Util;
 
 namespace zentao.client {
     internal class ZentaoRequest {
-        private readonly HttpClient _httpClient;
+        private readonly ZentaoHttpClient _httpClient;
 
-        public ZentaoRequest() {
-            _httpClient = new HttpClient();
+        public ZentaoRequest(ZentaoHttpClient httpClient) {
+            _httpClient = httpClient;
         }
 
         internal async Task<Result> GetDataAsync(string url) {
-            var responseMessage = await _httpClient.GetAsync(url);
+            using var httpClient = _httpClient.CreateHttpClient();
+            var responseMessage = await httpClient.GetAsync(url);
             responseMessage.EnsureSuccessStatusCode();
             var json = await responseMessage.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<Result>(json);
@@ -24,7 +21,7 @@ namespace zentao.client {
             }
 
             if (result.data != null && result.md5 != null) {
-                if (Util.md5(result.data) != result.md5) {
+                if (Md5(result.data) != result.md5) {
                     //todo
                     throw new Exception("md5 not match");
                 }
@@ -34,7 +31,8 @@ namespace zentao.client {
         }
 
         internal async Task<Result> PostDataAsync(string url, IList<KeyValuePair<string?, string?>> data) {
-            var responseMessage = await _httpClient.PostAsync(url, new FormUrlEncodedContent(data.ToList()));
+            using var httpClient = _httpClient.CreateHttpClient();
+            var responseMessage = await httpClient.PostAsync(url, new FormUrlEncodedContent(data.ToList()));
             responseMessage.EnsureSuccessStatusCode();
             var json = await responseMessage.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<Result>(json);
@@ -44,7 +42,7 @@ namespace zentao.client {
             }
 
             if (result.data != null && result.md5 != null) {
-                if (Util.md5(result.data) != result.md5) {
+                if (Md5(result.data) != result.md5) {
                     //todo
                     throw new Exception("md5 not match");
                 }
