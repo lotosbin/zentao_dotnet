@@ -99,6 +99,6 @@ namespace zentao.client.core {
         }
 
         private async Task<ZentaoHttpClient> GetOrCreateHttpClientAsync() =>
-            await _cache.GetOrCreateAsync($"{_account}@{_host}", _ => Task.FromResult(new ZentaoHttpClient(_host)));
+            await _cache.GetOrCreateAsync($"{_account}:{_password}@{_host}", _ => Task.FromResult(new ZentaoHttpClient(_host)));
     }
 }
