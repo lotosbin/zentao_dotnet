@@ -1,8 +1,7 @@
-using System.Net.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using zentao.client.core;
+using zentao.client.Core.AspNetCore;
 
 namespace zentao.client.tests {
     public class Startup {
@@ -12,9 +11,9 @@ namespace zentao.client.tests {
                 .Build();
 
             hostBuilder.ConfigureHostConfiguration(builder => builder.AddConfiguration(config))
-                .ConfigureServices((context, services) => {
+                .ConfigureServices((_, services) => {
                     services.AddMemoryCache();
-                    services.AddSingleton<ZentaoClient>();
+                    services.AddZentaoClient();
                 });
         }
     }

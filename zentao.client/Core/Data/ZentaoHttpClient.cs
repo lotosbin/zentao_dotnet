@@ -1,6 +1,6 @@
 using System.Net;
 
-namespace zentao.client;
+namespace zentao.client.Core.Data;
 
 internal class ZentaoHttpClient {
     public HttpClient CreateHttpClient() => new(new HttpClientHandler {

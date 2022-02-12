@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace zentao.client {
+namespace zentao.client.Core.Data {
     internal static class Util {
         internal static string Md5(string input) {
             var md5Hasher = MD5.Create();

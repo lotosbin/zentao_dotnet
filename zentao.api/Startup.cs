@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using zentao.client.Core.AspNetCore;
 
 namespace zentao.api {
     public class Startup {
@@ -15,6 +16,7 @@ namespace zentao.api {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddMemoryCache();
+            services.AddZentaoClient();
             services.AddControllers();
         }
 

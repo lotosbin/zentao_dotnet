@@ -1,4 +1,6 @@
-﻿namespace zentao.client; 
+﻿// ReSharper disable UnusedAutoPropertyAccessor.Global
+namespace zentao.client.Core.Data.Core; 
+// ReSharper disable InconsistentNaming
 
 internal class Result{
     public string? status { get; set; }

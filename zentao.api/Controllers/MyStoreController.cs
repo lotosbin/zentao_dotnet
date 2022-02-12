@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Logging;
-using zentao.api.Controllers.Base;
-using zentao.client;
-using zentao.client.core;
+using zentao.api.Auth;
+using zentao.client.Core;
 
 namespace zentao.api.Controllers {
     [ApiController]
     [Route("[controller]")]
-    public class MyStoreController : ZentaoControllerBase {
-        private readonly ILogger<MyStoreController> _logger;
+    public class MyStoreController : ControllerBase {
+        private readonly IZentaoClient _zentaoClient;
 
-        public MyStoreController(IMemoryCache memoryCache, ILogger<MyStoreController> logger) : base(memoryCache) {
-            _logger = logger;
+        public MyStoreController(IZentaoClient zentaoClient) {
+            _zentaoClient = zentaoClient;
         }
 
         [HttpGet]
-        public Task<IList<StoryItem>> Get([FromQuery] AuthModel authModel) => CreateClient(authModel).GetMyStoryListAsync();
+        public Task<IList<StoryItem>> Get([FromQuery] ZentaoApiCredential credential) => _zentaoClient.GetMyStoryListAsync(credential.host, credential.account, credential.password);
     }
 }

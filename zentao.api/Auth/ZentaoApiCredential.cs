@@ -1,8 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace zentao.api.Controllers;
+// ReSharper disable InconsistentNaming
+// ReSharper disable UnusedAutoPropertyAccessor.Global
 
-public class AuthModel {
+namespace zentao.api.Auth;
+
+public class ZentaoApiCredential {
     [Required] public string account { get; set; }
     [Required] public string password { get; set; }
     [Required] public string host { get; set; }

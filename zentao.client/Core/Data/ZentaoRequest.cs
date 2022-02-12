@@ -1,7 +1,8 @@
 using Newtonsoft.Json;
-using static zentao.client.Util;
+using zentao.client.Core.Data.Core;
+using static zentao.client.Core.Data.Util;
 
-namespace zentao.client {
+namespace zentao.client.Core.Data {
     internal class ZentaoRequest {
         private readonly ZentaoHttpClient _httpClient;
 
