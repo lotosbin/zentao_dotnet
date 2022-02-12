@@ -1,6 +1,8 @@
 # zentao_dotnet
 zentao api proxy
 
+[![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/lotosbin/zentao.api/latest)](https://hub.docker.com/repository/docker/lotosbin/zentao.api)
+
 ## deploy
 ### docker-compose
 ```
