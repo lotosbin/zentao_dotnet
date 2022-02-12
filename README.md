@@ -1,7 +1,8 @@
 # zentao_dotnet
 zentao api proxy
 
-[![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/lotosbin/zentao.api/latest)](https://hub.docker.com/repository/docker/lotosbin/zentao.api)
+[![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/lotosbin/zentao.api/latest?label=docker)](https://hub.docker.com/repository/docker/lotosbin/zentao.api)
+[![Nuget](https://img.shields.io/nuget/v/zentao.client)](https://www.nuget.org/packages/zentao.client)
 
 ## deploy
 ### docker-compose
